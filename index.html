@@ -1,47 +1,59 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>CampusGo</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="CampusGo: pedido anticipado en la cantina de tu facultad. Pedí antes, retirá rápido, aprovechá tu tiempo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
 <style>
 /* Layout: landing de una columna con bandas; el hero pone el prototipo vivo (celular) junto al lema.
    ===== MARCA: para cambiar colores, editá solo estos tokens (y sus versiones oscuras abajo). ===== */
 :root {
-  --brand: #0F7A50;        /* color principal de CampusGo */
-  --brand-ink: #FFFFFF;    /* texto sobre el color principal */
-  --brand-soft: #DCEFE4;   /* fondo suave del color principal */
-  --ticket: #FFC93C;       /* amarillo "número de retiro" */
-  --ticket-ink: #2A1F00;
-  --bg: #F4F6F1;
-  --surface: #FFFFFF;
-  --surface-2: #E9EEE6;
-  --ink: #13221B;
-  --muted: #5C6B63;
-  --line: #D5DDD3;
-  --alert: #C9401F;
-  --device: #13221B;
+  /* Valores del sistema de diseño CampusGo: azul campus primero, lima como chispa. */
+  --brand: #1B3A8C;        /* campus: acción principal */
+  --brand-ink: #FFFFFF;    /* on-campus */
+  --brand-soft: #E3EAF8;   /* campus-soft */
+  --ticket: #C6F24E;       /* lima: solo como relleno, nunca como texto */
+  --ticket-ink: #11161C;   /* on-lima */
+  --warm: #C2410C;         /* mandarina: comida y promos */
+  --warm-soft: #FEF1E8;
+  --warning: #9A5B00;
+  --warning-soft: #FBEFD9;
+  --alert: #C02626;        /* danger */
+  --alert-soft: #FBE3E3;
+  --focus: #2E55B8;
+  --bg: #F2F4F7;           /* surface */
+  --surface: #FFFFFF;      /* surface-raised */
+  --surface-2: #E7EBF0;    /* surface-sunken */
+  --ink: #11161C;
+  --muted: #475262;
+  --line: #D5DBE3;
+  --line-strong: #7A8596;  /* bordes de controles */
+  --device: #11161C;
+  --shadow-2: 0 8px 24px rgba(17, 22, 28, .12);
 
-  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body: "Figtree", "Segoe UI", system-ui, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
-  --r: 14px;
+  --f-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --f-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-caption: var(--f-body);
+  --r: 12px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --brand: #36C285; --brand-ink: #062417; --brand-soft: #173527;
-    --bg: #0D1411; --surface: #151F1A; --surface-2: #1D2A23;
-    --ink: #E8EFEA; --muted: #96A69D; --line: #2A3831;
-    --alert: #FF7A5C; --device: #000000;
+    --brand: #9DB8F7; --brand-ink: #0D1117; --brand-soft: #172447; --ticket-ink: #0D1117;
+    --warm: #FB923C; --warm-soft: #3A1A0A; --warning: #FBBF24; --warning-soft: #2E2208;
+    --alert: #F87171; --alert-soft: #3A1212; --focus: #C6F24E;
+    --bg: #0D1117; --surface: #161C26; --surface-2: #0A0D12;
+    --ink: #E6EAF0; --muted: #A3AEBF; --line: #2A3340; --line-strong: #6B778A;
+    --device: #000000; --shadow-2: 0 8px 24px rgba(0, 0, 0, .6);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --brand: #36C285; --brand-ink: #062417; --brand-soft: #173527;
-  --bg: #0D1411; --surface: #151F1A; --surface-2: #1D2A23;
-  --ink: #E8EFEA; --muted: #96A69D; --line: #2A3831;
-  --alert: #FF7A5C; --device: #000000;
+  --brand: #9DB8F7; --brand-ink: #0D1117; --brand-soft: #172447; --ticket-ink: #0D1117;
+  --warm: #FB923C; --warm-soft: #3A1A0A; --warning: #FBBF24; --warning-soft: #2E2208;
+  --alert: #F87171; --alert-soft: #3A1212; --focus: #C6F24E;
+  --bg: #0D1117; --surface: #161C26; --surface-2: #0A0D12;
+  --ink: #E6EAF0; --muted: #A3AEBF; --line: #2A3340; --line-strong: #6B778A;
+  --device: #000000; --shadow-2: 0 8px 24px rgba(0, 0, 0, .6);
   color-scheme: dark;
 }
 
@@ -51,24 +63,25 @@ h1, h2, h3 { font-family: var(--f-display); line-height: 1.05; text-wrap: balanc
 p { margin: 0; }
 a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
-:focus-visible { outline: 3px solid var(--ticket); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .band { padding-block: 72px; }
 .band.tight { padding-top: 0; }
-.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); font-weight: 700; }
+.eyebrow { font-family: var(--f-caption); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); font-weight: 700; }
 .lead { font-size: 19px; color: var(--muted); max-width: 52ch; }
 .src { font-size: 13px; color: var(--muted); }
 
-.btn { display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: 999px; padding: 13px 22px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform .15s ease; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 0; border-radius: var(--r); padding: 13px 22px; font-weight: 700; font-size: 16px; text-decoration: none; transition: transform .15s ease; }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary { background: var(--brand); color: var(--brand-ink); }
-.btn-ghost { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+.btn-ghost { background: transparent; border: 1.5px solid var(--line-strong); color: var(--ink); }
 
 /* Logo */
-.logo { display: inline-flex; align-items: center; gap: 9px; font-family: var(--f-display); font-weight: 800; font-size: 21px; letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
-.logo svg { width: 30px; height: 30px; flex: none; }
-.logo b { color: var(--brand); font-weight: 800; }
+.logo { display: inline-flex; align-items: center; color: var(--ink); text-decoration: none; }
+.logo svg { height: 32px; width: auto; display: block; }
+.lg-ink { fill: var(--ink); }
+.lg-go { fill: var(--brand); }
 
 /* Nav */
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
@@ -88,7 +101,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .clock { margin-top: 36px; display: flex; border: 1.5px dashed var(--line); border-radius: var(--r); overflow: hidden; max-width: 480px; }
 .clock div { flex: 1; padding: 12px 16px; min-width: 0; }
 .clock div + div { border-left: 1.5px dashed var(--line); }
-.clock .k { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.clock .k { font-family: var(--f-caption); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 .clock .v { font-family: var(--f-display); font-weight: 800; font-size: 26px; font-variant-numeric: tabular-nums; }
 .clock .v.good { color: var(--brand); }
 .hero-device { display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -118,7 +131,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* Steps */
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .step { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; }
-.step .n { font-family: var(--f-mono); font-weight: 700; color: var(--brand); font-size: 14px; }
+.step .n { font-family: var(--f-caption); font-weight: 700; color: var(--brand); font-size: 14px; }
 .step h3 { font-size: 22px; }
 .step p { color: var(--muted); }
 @media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -126,7 +139,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 .flow { margin-top: 28px; display: grid; gap: 12px; }
 .flow-row { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 14px; align-items: center; }
-.flow-row .who { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.flow-row .who { font-family: var(--f-caption); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
 .flow-row ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .flow-row li { padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 600; border: 1.5px solid var(--line); background: var(--surface); }
 .flow-row.now li.wait { border-color: var(--alert); color: var(--alert); }
@@ -138,8 +151,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ticket { --notch: var(--surface); background: var(--ticket); color: var(--ticket-ink); border-radius: 14px; padding: 14px 16px; position: relative; display: grid; gap: 2px; }
 .ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%; background: var(--notch); transform: translateY(-50%); }
 .ticket::before { left: -8px; } .ticket::after { right: -8px; }
-.ticket .tk { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
-.ticket .tn { font-family: var(--f-mono); font-weight: 700; font-size: 30px; letter-spacing: .02em; }
+.ticket .tk { font-family: var(--f-caption); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.ticket .tn { font-family: var(--f-display); font-weight: 800; font-size: 30px; letter-spacing: -0.01em; }
 
 /* Two sides */
 .sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -151,16 +164,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .side li { padding-left: 26px; position: relative; }
 .side li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 3px; background: var(--ticket); }
 .panel { background: var(--surface-2); border-radius: 14px; padding: 14px; display: grid; gap: 8px; font-size: 14px; }
-.panel-h { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.panel-h { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-caption); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 .prow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; background: var(--surface); border-radius: 10px; padding: 9px 12px; }
-.prow .on { font-family: var(--f-mono); font-weight: 700; }
+.prow .on { font-family: var(--f-caption); font-weight: 700; }
 .prow .what { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
 @media (max-width: 820px) { .sides { grid-template-columns: minmax(0, 1fr); } .side { padding: 24px; } }
 
 /* Precios */
 .prices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .price { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 8px; align-content: start; }
-.price .who { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.price .who { font-family: var(--f-caption); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
 .price .amt { font-family: var(--f-display); font-weight: 800; font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; }
 .price .amt small { font-size: 16px; font-weight: 600; color: var(--muted); font-family: var(--f-body); }
 .price p { color: var(--muted); font-size: 15px; }
@@ -172,9 +185,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .goals-scroll { overflow-x: auto; }
 .goals table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
 .goals th, .goals td { text-align: left; padding: 13px 18px; border-bottom: 1px solid var(--line); }
-.goals th { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.goals th { font-family: var(--f-caption); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
 .goals tr:last-child td { border-bottom: 0; }
-.goals td.meta { font-family: var(--f-mono); font-weight: 700; white-space: nowrap; }
+.goals td.meta { font-family: var(--f-caption); font-weight: 700; white-space: nowrap; }
 
 /* Pills */
 .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
@@ -182,11 +195,12 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .pill.prep { background: var(--surface-2); color: var(--ink); border: 1px solid var(--line); }
 .pill.ready { background: var(--brand); color: var(--brand-ink); }
 .pill.closed { background: var(--surface-2); color: var(--muted); }
+.pill.warn { background: var(--warning-soft); color: var(--warning); }
 
 /* Mercado */
 .market { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .mk { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px; display: grid; gap: 6px; align-content: start; }
-.mk .k { font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.mk .k { font-family: var(--f-caption); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
 .mk .v { font-family: var(--f-display); font-weight: 800; font-size: clamp(28px, 3.4vw, 38px); line-height: 1.05; font-variant-numeric: tabular-nums; }
 .mk p { color: var(--muted); font-size: 14px; }
 .mk.dark { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
@@ -225,6 +239,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .cta .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .cta .btn-primary { background: var(--ticket); color: var(--ticket-ink); justify-content: center; }
 .form-ok { background: var(--brand); color: var(--brand-ink); border-radius: 12px; padding: 12px 14px; font-weight: 600; }
+.form-err { background: var(--alert-soft); color: var(--alert); border-radius: 12px; padding: 12px 14px; font-weight: 600; }
+.cta button:disabled { opacity: .6; cursor: wait; }
 @media (max-width: 820px) { .cta { grid-template-columns: minmax(0, 1fr); padding: 26px; } }
 
 footer { padding-block: 32px 48px; color: var(--muted); font-size: 14px; }
@@ -262,21 +278,21 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .small { font-size: 13px; }
 
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
-.choice { width: 100%; text-align: left; background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 13px 14px; display: flex; gap: 12px; align-items: center; }
+.choice { width: 100%; text-align: left; background: var(--surface); border: 1.5px solid var(--line-strong); border-radius: 14px; padding: 13px 14px; display: flex; gap: 12px; align-items: center; }
 .choice.on { border-color: var(--brand); background: var(--brand-soft); }
 .choice[disabled] { opacity: .5; cursor: not-allowed; }
 .choice .dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); flex: none; }
 .choice.on .dot { border: 6px solid var(--brand); }
 .choice .grow { flex: 1; min-width: 0; }
-.choice .cupo { font-family: var(--f-mono); font-size: 11px; font-weight: 700; white-space: nowrap; }
+.choice .cupo { font-family: var(--f-caption); font-size: 11px; font-weight: 700; white-space: nowrap; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { border: 1.5px solid var(--line); background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.chip { border: 1.5px solid var(--line-strong); background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 600; white-space: nowrap; }
 .chip.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-.abtn { width: 100%; border: 0; border-radius: 14px; padding: 15px; font-weight: 700; font-size: 16px; background: var(--brand); color: var(--brand-ink); display: flex; justify-content: center; gap: 8px; }
+.abtn { width: 100%; border: 0; border-radius: var(--r); padding: 15px; font-weight: 700; font-size: 16px; background: var(--brand); color: var(--brand-ink); display: flex; justify-content: center; gap: 8px; }
 .abtn:disabled { opacity: .4; cursor: not-allowed; }
 .abtn.alt { background: var(--surface-2); color: var(--ink); }
 
-.search { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+.search { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 12px; padding: 10px 12px; }
 .search input { border: 0; outline: 0; background: transparent; font: inherit; color: var(--ink); flex: 1; min-width: 0; }
 .search svg { width: 18px; height: 18px; color: var(--muted); flex: none; }
 
@@ -287,34 +303,36 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .cant .av { width: 48px; height: 48px; border-radius: 12px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 18px; }
 .cant .nm { font-weight: 700; }
 .cant .wt { text-align: right; display: grid; gap: 4px; justify-items: end; }
-.cant .mins { font-family: var(--f-mono); font-weight: 700; font-size: 13px; }
+.cant .mins { font-family: var(--f-caption); font-weight: 700; font-size: 13px; }
 
 .tabs { display: flex; gap: 6px; overflow-x: auto; padding: 0 18px 10px; position: sticky; top: 0; background: var(--bg); z-index: 2; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .item { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; }
-.th { width: 56px; height: 56px; border-radius: 14px; background: var(--surface-2); display: grid; place-items: center; font-size: 28px; }
+.th { width: 56px; height: 56px; border-radius: 14px; background: var(--surface-2); display: grid; place-items: center; color: var(--brand); }
+.th svg { width: 26px; height: 26px; }
 .item .nm { font-weight: 700; }
 .item .ds { font-size: 13px; color: var(--muted); }
 .item .pr { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 14px; margin-top: 2px; }
 .add { width: 34px; height: 34px; border-radius: 50%; background: var(--brand); color: var(--brand-ink); font-size: 22px; line-height: 1; display: grid; place-items: center; font-weight: 700; }
-.add.has { background: var(--ink); color: var(--bg); font-size: 14px; font-family: var(--f-mono); }
+.add.has { background: var(--ink); color: var(--bg); font-size: 14px; font-family: var(--f-caption); }
 .stepper { display: inline-flex; align-items: center; gap: 4px; background: var(--surface-2); border-radius: 999px; padding: 3px; }
 .stepper button { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--surface); font-weight: 800; font-size: 16px; }
 .stepper span { min-width: 20px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 .tag { font-size: 11px; font-weight: 700; background: var(--ticket); color: var(--ticket-ink); border-radius: 6px; padding: 1px 6px; margin-left: 6px; vertical-align: 2px; }
-.tag.fit { background: var(--brand-soft); color: var(--brand); }
+.tag.fit { background: var(--warm-soft); color: var(--warm); }
 
-.hero-dish { height: 170px; display: grid; place-items: center; font-size: 84px; background: var(--surface-2); border-radius: 0 0 28px 28px; margin-top: -4px; }
+.hero-dish { height: 170px; display: grid; place-items: center; color: var(--brand); background: var(--surface-2); border-radius: 0 0 28px 28px; margin-top: -4px; }
+.hero-dish svg { width: 64px; height: 64px; }
 
 .cartbar { position: sticky; bottom: 0; padding: 10px 14px 14px; background: linear-gradient(to top, var(--bg) 70%, transparent); }
-.cartbar button { width: 100%; border: 0; border-radius: 14px; padding: 14px 16px; background: var(--ink); color: var(--bg); display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
-.cartbar .ct { background: var(--ticket); color: var(--ticket-ink); border-radius: 8px; padding: 1px 8px; margin-right: 8px; font-family: var(--f-mono); }
+.cartbar button { box-shadow: var(--shadow-2); width: 100%; border: 0; border-radius: var(--r); padding: 14px 16px; background: var(--ink); color: var(--bg); display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+.cartbar .ct { background: var(--ticket); color: var(--ticket-ink); border-radius: 8px; padding: 1px 8px; margin-right: 8px; font-family: var(--f-caption); }
 
 .lines { display: grid; gap: 8px; font-variant-numeric: tabular-nums; }
 .line { display: flex; justify-content: space-between; gap: 10px; }
 .line.total { font-weight: 800; font-size: 18px; border-top: 1px dashed var(--line); padding-top: 10px; }
-textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: var(--surface); color: var(--ink); resize: none; }
-.lbl { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid var(--line-strong); border-radius: 12px; padding: 10px 12px; background: var(--surface); color: var(--ink); resize: none; }
+.lbl { font-family: var(--f-caption); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 
 .center { display: grid; place-items: center; text-align: center; gap: 14px; padding: 70px 28px; }
 .spin { width: 54px; height: 54px; border-radius: 50%; border: 5px solid var(--surface-2); border-top-color: var(--brand); animation: spin .8s linear infinite; }
@@ -336,7 +354,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
 .bigticket { padding: 18px 20px; }
 .bigticket .tn { font-size: 46px; line-height: 1; }
 .bigticket .row { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 2px dashed color-mix(in srgb, var(--ticket-ink) 30%, transparent); font-size: 13px; }
-.bigticket .code { font-family: var(--f-mono); font-weight: 700; font-size: 20px; letter-spacing: .25em; }
+.bigticket .code { font-family: var(--f-caption); font-weight: 700; font-size: 20px; letter-spacing: .25em; }
 
 .push { position: absolute; top: 34px; left: 10px; right: 10px; z-index: 20; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 12px 14px; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; align-items: center; text-align: left; box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .35); animation: drop .3s ease; }
 .push svg { width: 34px; height: 34px; }
@@ -356,16 +374,19 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
+</head><body>
 
-
-<!-- ===== MARCA: logo. Reemplazá este SVG por el logo final (se usa en toda la página y la app). ===== -->
+<!-- ===== MARCA: logos del sistema de diseño CampusGo (isotipo y logo horizontal). ===== -->
 <template id="logo-mark">
-  <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--brand)"/><path d="M9 12.5h14l-1.4 9.2a2 2 0 0 1-2 1.8h-7.2a2 2 0 0 1-2-1.8z" fill="var(--brand-ink)"/><path d="M12.5 12.5c0-2.4 1.6-4 3.5-4s3.5 1.6 3.5 4" fill="none" stroke="var(--brand-ink)" stroke-width="2"/><path d="M14 17.5h6m-2.5-2.3 2.5 2.3-2.5 2.3" fill="none" stroke="var(--brand)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="46" fill="#1B3A8C"/><path d="M142.6 70.2 A52 52 0 1 0 149.5 116.1" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/><path d="M102 102 H156" fill="none" stroke="#C6F24E" stroke-width="20" stroke-linecap="round"/></svg>
+</template>
+<template id="logo-full">
+  <svg viewBox="0 0 530 120" role="img" aria-label="CampusGo"><g transform="translate(12 12) scale(.48)"><rect width="200" height="200" rx="46" fill="#1B3A8C"/><path d="M142.6 70.2 A52 52 0 1 0 149.5 116.1" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/><path d="M102 102 H156" fill="none" stroke="#C6F24E" stroke-width="20" stroke-linecap="round"/></g><path class="lg-ink" d="M160.24 87.684Q154.48 87.684 149.548 85.596Q144.61599999999999 83.508 140.944 79.764Q137.272 76.02 135.22 70.97999999999999Q133.168 65.94 133.168 59.964Q133.168 53.98799999999999 135.184 48.91199999999999Q137.2 43.836 140.872 40.128Q144.544 36.419999999999995 149.476 34.367999999999995Q154.408 32.315999999999995 160.24 32.315999999999995Q166.072 32.315999999999995 170.716 34.25999999999999Q175.36 36.20399999999999 178.60000000000002 39.443999999999996Q181.84 42.684 183.208 46.644L173.344 51.395999999999994Q171.976 47.507999999999996 168.55599999999998 44.952Q165.136 42.395999999999994 160.24 42.395999999999994Q155.488 42.395999999999994 151.888 44.628Q148.288 46.86 146.308 50.784Q144.328 54.708 144.328 59.964Q144.328 65.22 146.308 69.17999999999999Q148.288 73.13999999999999 151.888 75.37199999999999Q155.488 77.604 160.24 77.604Q165.136 77.604 168.55599999999998 75.048Q171.976 72.49199999999999 173.344 68.604L183.208 73.356Q181.84 77.31599999999999 178.60000000000002 80.55599999999998Q175.36 83.79599999999999 170.716 85.74Q166.072 87.684 160.24 87.684Z M200.272 87.684Q196.024 87.684 192.928 86.316Q189.832 84.948 188.176 82.392Q186.52 79.836 186.52 76.30799999999999Q186.52 72.996 188.032 70.44Q189.544 67.88399999999999 192.676 66.15599999999999Q195.808 64.428 200.488 63.708L211.36 61.97999999999999V60.89999999999999Q211.36 58.66799999999999 209.596 57.15599999999999Q207.832 55.64399999999999 204.808 55.64399999999999Q201.928 55.64399999999999 199.732 57.227999999999994Q197.536 58.812 196.528 61.403999999999996L187.888 57.3Q189.04 53.98799999999999 191.56 51.611999999999995Q194.08 49.236 197.608 47.94Q201.136 46.644 205.312 46.644Q210.28 46.644 214.096 48.443999999999996Q217.912 50.24399999999999 220.036 53.44799999999999Q222.16 56.651999999999994 222.16 60.89999999999999V86.82H212.08V83.076Q211.43200000000002 83.79599999999999 210.712 84.3Q208.624 86.02799999999999 206.03199999999998 86.856Q203.44 87.684 200.272 87.684ZM211.36 69.89999999999999 202.43200000000002 71.484Q200.12800000000001 71.916 198.904 72.96Q197.68 74.00399999999999 197.68 75.948Q197.68 77.74799999999999 199.048 78.756Q200.416 79.764 202.43200000000002 79.764Q205.096 79.764 207.11200000000002 78.612Q209.12800000000001 77.46 210.24400000000003 75.47999999999999Q211.36 73.5 211.36 71.124Z M228.64000000000001 86.82V47.507999999999996H238.72V52.26Q239.8 50.099999999999994 241.816 48.803999999999995Q245.12800000000001 46.644 249.736 46.644Q254.632 46.644 258.376 49.092Q260.536 50.604 261.688 52.62Q263.272 50.315999999999995 265.432 48.94799999999999Q269.032 46.644 273.856 46.644Q278.104 46.644 281.38 48.516Q284.656 50.388 286.528 53.736Q288.4 57.083999999999996 288.4 61.547999999999995V86.82H277.6V63.85199999999999Q277.6 61.547999999999995 276.77200000000005 59.891999999999996Q275.944 58.236 274.432 57.3Q272.92 56.364 270.76 56.364Q268.672 56.364 267.124 57.3Q265.576 58.236 264.74800000000005 59.891999999999996Q263.92 61.547999999999995 263.92 63.85199999999999V86.82H253.12V63.85199999999999Q253.12 61.547999999999995 252.292 59.891999999999996Q251.464 58.236 249.952 57.3Q248.44 56.364 246.28 56.364Q244.192 56.364 242.644 57.3Q241.096 58.236 240.268 59.891999999999996Q239.44 61.547999999999995 239.44 63.85199999999999V86.82Z M294.08799999999997 101.22V47.507999999999996H304.168V51.611999999999995Q305.89599999999996 49.523999999999994 308.56 48.227999999999994Q311.87199999999996 46.644 316.192 46.644Q321.808 46.644 326.344 49.379999999999995Q330.88 52.11599999999999 333.544 56.75999999999999Q336.20799999999997 61.403999999999996 336.20799999999997 67.16399999999999Q336.20799999999997 72.85199999999999 333.58 77.53199999999998Q330.952 82.21199999999999 326.416 84.948Q321.88 87.684 316.12 87.684Q312.08799999999997 87.684 308.704 86.172Q306.544 85.30799999999999 304.888 83.79599999999999V101.22ZM314.82399999999996 77.964Q317.84799999999996 77.964 320.15199999999993 76.596Q322.45599999999996 75.228 323.75199999999995 72.78Q325.048 70.332 325.048 67.16399999999999Q325.048 63.995999999999995 323.75199999999995 61.583999999999996Q322.45599999999996 59.172 320.15199999999993 57.768Q317.84799999999996 56.364 314.82399999999996 56.364Q311.94399999999996 56.364 309.67599999999993 57.732Q307.40799999999996 59.099999999999994 306.14799999999997 61.547999999999995Q304.888 63.995999999999995 304.888 67.16399999999999Q304.888 70.332 306.14799999999997 72.78Q307.40799999999996 75.228 309.67599999999993 76.596Q311.94399999999996 77.964 314.82399999999996 77.964Z M355.216 87.684Q350.464 87.684 347.116 85.632Q343.76800000000003 83.58 342.04 79.90799999999999Q340.312 76.23599999999999 340.312 71.33999999999999V47.507999999999996H351.112V70.476Q351.112 72.708 352.012 74.4Q352.912 76.092 354.568 77.02799999999999Q356.224 77.964 358.312 77.964Q360.472 77.964 362.092 77.02799999999999Q363.712 76.092 364.61199999999997 74.4Q365.512 72.708 365.512 70.476V47.507999999999996H376.312V86.82H366.232V82.068Q364.86400000000003 84.588 362.416 85.95599999999999Q359.32 87.684 355.216 87.684Z M398.2 87.684Q391.71999999999997 87.684 386.932 84.624Q382.144 81.564 380.416 76.38L388.336 72.636Q389.848 75.80399999999999 392.44 77.60399999999998Q395.032 79.404 398.2 79.404Q400.504 79.404 401.728 78.46799999999999Q402.952 77.532 402.952 75.87599999999999Q402.952 75.012 402.52 74.4Q402.08799999999997 73.788 401.224 73.28399999999999Q400.36 72.78 399.06399999999996 72.41999999999999L392.368 70.548Q387.544 69.17999999999999 384.952 66.11999999999999Q382.36 63.059999999999995 382.36 58.884Q382.36 55.211999999999996 384.23199999999997 52.476Q386.104 49.739999999999995 389.488 48.19199999999999Q392.872 46.644 397.264 46.644Q403.024 46.644 407.38 49.343999999999994Q411.736 52.044 413.536 56.94L405.544 60.684Q404.68 58.236 402.41200000000003 56.75999999999999Q400.144 55.28399999999999 397.264 55.28399999999999Q395.176 55.28399999999999 393.988 56.147999999999996Q392.8 57.012 392.8 58.523999999999994Q392.8 59.315999999999995 393.23199999999997 59.964Q393.664 60.611999999999995 394.63599999999997 61.11599999999999Q395.608 61.61999999999999 397.048 62.05199999999999L403.312 63.92399999999999Q408.20799999999997 65.36399999999999 410.79999999999995 68.28Q413.392 71.196 413.392 75.44399999999999Q413.392 79.116 411.484 81.852Q409.57599999999996 84.588 406.192 86.136Q402.808 87.684 398.2 87.684Z"/><path class="lg-go" d="M445.0 87.684Q439.23999999999995 87.684 434.27199999999993 85.596Q429.304 83.508 425.55999999999995 79.764Q421.816 76.02 419.72799999999995 70.97999999999999Q417.64 65.94 417.64 59.964Q417.64 53.98799999999999 419.65599999999995 48.91199999999999Q421.67199999999997 43.836 425.34399999999994 40.128Q429.01599999999996 36.419999999999995 433.948 34.367999999999995Q438.88 32.315999999999995 444.712 32.315999999999995Q450.544 32.315999999999995 455.188 34.25999999999999Q459.832 36.20399999999999 463.072 39.443999999999996Q466.31199999999995 42.684 467.67999999999995 46.644L457.816 51.395999999999994Q456.448 47.507999999999996 453.02799999999996 44.952Q449.60799999999995 42.395999999999994 444.712 42.395999999999994Q439.96 42.395999999999994 436.36 44.628Q432.76 46.86 430.78 50.784Q428.79999999999995 54.708 428.79999999999995 59.964Q428.79999999999995 65.22 430.888 69.17999999999999Q432.976 73.13999999999999 436.61199999999997 75.37199999999999Q440.248 77.604 445.0 77.604Q448.67199999999997 77.604 451.876 76.19999999999999Q455.08 74.79599999999999 457.05999999999995 72.13199999999999Q459.03999999999996 69.46799999999999 459.03999999999996 65.72399999999999V65.58H444.712V56.22H470.2V61.907999999999994Q470.2 68.46 468.03999999999996 73.32Q465.88 78.17999999999999 462.24399999999997 81.38399999999999Q458.60799999999995 84.588 454.10799999999995 86.136Q449.60799999999995 87.684 445.0 87.684Z M494.39199999999994 87.684Q488.55999999999995 87.684 483.77199999999993 85.02Q478.984 82.356 476.14 77.71199999999999Q473.29599999999994 73.068 473.29599999999994 67.16399999999999Q473.29599999999994 61.187999999999995 476.14 56.58Q478.984 51.971999999999994 483.77199999999993 49.30799999999999Q488.55999999999995 46.644 494.39199999999994 46.644Q500.22399999999993 46.644 504.97599999999994 49.30799999999999Q509.72799999999995 51.971999999999994 512.5719999999999 56.58Q515.4159999999999 61.187999999999995 515.4159999999999 67.16399999999999Q515.4159999999999 73.068 512.5719999999999 77.71199999999999Q509.72799999999995 82.356 504.97599999999994 85.02Q500.22399999999993 87.684 494.39199999999994 87.684ZM494.39199999999994 77.964Q497.34399999999994 77.964 499.53999999999996 76.596Q501.73599999999993 75.228 502.996 72.78Q504.256 70.332 504.256 67.16399999999999Q504.256 63.995999999999995 502.996 61.583999999999996Q501.73599999999993 59.172 499.53999999999996 57.768Q497.34399999999994 56.364 494.39199999999994 56.364Q491.43999999999994 56.364 489.20799999999997 57.768Q486.97599999999994 59.172 485.71599999999995 61.583999999999996Q484.45599999999996 63.995999999999995 484.45599999999996 67.16399999999999Q484.45599999999996 70.332 485.71599999999995 72.78Q486.97599999999994 75.228 489.20799999999997 76.596Q491.43999999999994 77.964 494.39199999999994 77.964Z"/></svg>
 </template>
 
 <header class="nav">
   <div class="wrap">
-    <a class="logo" href="#top" data-logo>Campus<b>Go</b></a>
+    <a class="logo" href="#top" data-logo></a>
     <nav class="nav-links">
       <a href="#problema">El problema</a>
       <a href="#como">Cómo funciona</a>
@@ -492,8 +513,8 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         <h2>Montos chicos de los dos lados.</h2>
       </div>
       <div class="prices">
-        <article class="price"><span class="who">Estudiante</span><span class="amt">$200 <small>por pedido</small></span><p>Cargo por servicio, siempre detallado antes de confirmar. La comida cuesta lo mismo que en el mostrador.</p></article>
-        <article class="price"><span class="who">Estudiante frecuente</span><span class="amt">$2.000 <small>por mes</small></span><p>CampusGo Pass: sin cargo por servicio y con franja de retiro prioritaria. Próximamente.</p></article>
+        <article class="price"><span class="who">Estudiante</span><span class="amt">$&nbsp;200 <small>por pedido</small></span><p>Cargo por servicio, siempre detallado antes de confirmar. La comida cuesta lo mismo que en el mostrador.</p></article>
+        <article class="price"><span class="who">Estudiante frecuente</span><span class="amt">$&nbsp;2.000 <small>por mes</small></span><p>CampusGo Pass: sin cargo por servicio y con franja de retiro prioritaria. Próximamente.</p></article>
         <article class="price feature"><span class="who">Cantina</span><span class="amt">5% <small>por pedido</small></span><p>Sin inversión: recibís pedidos en el celular o tablet que ya tenés y cobrás con Mercado Pago. Las apps de delivery cobran entre 25% y 35%.</p></article>
       </div>
     </div>
@@ -544,7 +565,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         <h2>Lo que nos preguntan siempre.</h2>
       </div>
       <div class="faq">
-        <details open><summary>¿Cuánto pago como estudiante?</summary><p>Lo mismo que en el mostrador, más un cargo por servicio de $200 por pedido. Si pedís seguido, el CampusGo Pass te saca ese cargo.</p></details>
+        <details open><summary>¿Cuánto pago como estudiante?</summary><p>Lo mismo que en el mostrador, más un cargo por servicio de $&nbsp;200 por pedido. Si pedís seguido, el CampusGo Pass te saca ese cargo.</p></details>
         <details><summary>¿Cómo se paga?</summary><p>Con Mercado Pago, desde la app. El pago queda hecho antes de que llegues a la cantina.</p></details>
         <details><summary>¿Y si en el retiro también se arma fila?</summary><p>Cada franja de retiro tiene cupo. Cuando una se llena, la app te ofrece la siguiente, así la cantina no recibe todos los pedidos juntos.</p></details>
         <details><summary>¿Qué necesita una cantina para sumarse?</summary><p>Un celular o tablet en el mostrador, una cuenta de Mercado Pago y un estante para los pedidos listos. El menú lo cargamos juntos.</p></details>
@@ -579,18 +600,19 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
           <p>Seas estudiante o tengas una cantina en el campus, dejanos tus datos y te avisamos cuando CampusGo llegue a tu facultad.</p>
         </div>
         <form id="leadForm">
-          <label for="f-name">Nombre<input id="f-name" required placeholder="Tu nombre"></label>
-          <label for="f-fac">Facultad<input id="f-fac" required placeholder="UTN FRC"></label>
+          <label for="f-name">Nombre<input id="f-name" name="nombre" required placeholder="Tu nombre"></label>
+          <label for="f-fac">Facultad<input id="f-fac" name="facultad" required placeholder="UTN FRC"></label>
           <div class="two">
             <label for="f-role">Soy
-              <select id="f-role"><option>Estudiante</option><option>Cantina o bar</option></select>
+              <select id="f-role" name="rol"><option>Estudiante</option><option>Cantina o bar</option></select>
             </label>
             <label for="f-turno">Turno
-              <select id="f-turno"><option>Mañana</option><option>Tarde</option><option>Noche</option></select>
+              <select id="f-turno" name="turno"><option>Mañana</option><option>Tarde</option><option>Noche</option></select>
             </label>
           </div>
           <button class="btn btn-primary" type="submit">Quiero probarlo</button>
-          <div class="form-ok" id="formOk" hidden>¡Listo, te anotamos! Te avisamos cuando CampusGo llegue a tu facultad.</div>
+          <div class="form-ok" id="formOk" role="status" hidden>Listo, te anotamos. Te avisamos cuando CampusGo llegue a tu facultad.</div>
+          <div class="form-err" id="formErr" role="alert" hidden></div>
         </form>
       </div>
     </div>
@@ -599,7 +621,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
 
 <footer>
   <div class="wrap">
-    <span class="logo" data-logo>Campus<b>Go</b></span>
+    <span class="logo" data-logo></span>
     <span>Proyecto de Gestión Emprendedora · Ingeniería Industrial, UTN FRC · Grupo 1 · 2026. Datos del problema: encuesta de validación a 34 estudiantes de la FRC. Cantinas, menú y precios del prototipo son de ejemplo.</span>
   </div>
 </footer>
@@ -608,7 +630,8 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
 (function () {
   // ===== Logo en todos los lugares marcados con data-logo =====
   const LOGO = document.getElementById('logo-mark').innerHTML;
-  document.querySelectorAll('[data-logo]').forEach(el => el.insertAdjacentHTML('afterbegin', LOGO));
+  const LOGO_FULL = document.getElementById('logo-full').innerHTML;
+  document.querySelectorAll('[data-logo]').forEach(el => el.innerHTML = LOGO_FULL);
 
   // ===== RESULTADOS DE LA PRUEBA: completá "res" con el valor real (ej. '4,2 min' o '80%') y "ok" con true/false =====
   const GOALS = [
@@ -617,18 +640,37 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     { k: 'Sienten que ahorraron tiempo', meta: '≥ 70%', res: null, ok: null },
     { k: 'Volverían a usar CampusGo', meta: '≥ 70%', res: null, ok: null },
     { k: 'Prefieren CampusGo a la fila', meta: '≥ 70%', res: null, ok: null },
-    { k: 'Aceptan el cargo de $200', meta: '≥ 50%', res: null, ok: null },
+    { k: 'Aceptan el cargo de $ 200', meta: '≥ 50%', res: null, ok: null },
     { k: 'La cantina acepta la comisión del 5%', meta: 'Carta de intención', res: null, ok: null }
   ];
   document.getElementById('goalsBody').innerHTML = GOALS.map(g => `<tr><td>${g.k}</td><td class="meta">${g.meta}</td><td>${g.res === null ? '<span class="pill prep">En curso</span>' : `<span class="pill ${g.ok ? 'ready' : 'new'}">${g.ok ? '✓' : '✗'} ${g.res}</span>`}</td></tr>`).join('');
 
   // ===== Formulario de la landing =====
-  // Para recibir los datos de verdad, pegá en FORM_URL el link de un Google Form; al enviar se abre el formulario.
-  const FORM_URL = '';
-  document.getElementById('leadForm').addEventListener('submit', e => {
+  // Para recibir los datos, pegá en FORM_ENDPOINT la URL de un servicio que acepte POST de formularios
+  // (Formspree, Getform, Basin…). Sin endpoint, el formulario avisa que todavía no toma inscripciones.
+  const FORM_ENDPOINT = '';
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', async e => {
     e.preventDefault();
-    document.getElementById('formOk').hidden = false;
-    if (FORM_URL) window.open(FORM_URL, '_blank', 'noopener');
+    const ok = document.getElementById('formOk'), err = document.getElementById('formErr'), btn = leadForm.querySelector('button');
+    ok.hidden = err.hidden = true;
+    if (!FORM_ENDPOINT) {
+      err.textContent = 'Todavía no estamos tomando inscripciones desde la web. Probá de nuevo en unos días.';
+      err.hidden = false;
+      return;
+    }
+    btn.disabled = true;
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(leadForm), headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(res.status);
+      leadForm.reset();
+      ok.hidden = false;
+    } catch {
+      err.textContent = 'No pudimos anotarte. Revisá tu conexión y probá de nuevo.';
+      err.hidden = false;
+    } finally {
+      btn.disabled = false;
+    }
   });
 
   // ===== Pantalla completa =====
@@ -650,49 +692,54 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     { id: 'kiosco', name: 'Kiosco del Patio', where: 'Patio central', wait: 4, open: true, shelf: 'Ventanilla CampusGo', prefix: 'K' },
     { id: 'noche', name: 'Buffet Turno Noche', where: 'Planta baja', wait: 0, open: false, opens: 'Abre 18:00', prefix: 'N' }
   ];
+  // Sin emoji en la interfaz: cada categoría usa un ícono de línea hasta tener fotos reales de cada cantina.
   const MENU = [
-    { cat: 'Almuerzo', items: [
-      { id: 'menu', name: 'Menú del día', desc: 'Milanesa con puré y bebida', price: 6500, e: '🍽️', tag: 'Hoy' },
-      { id: 'sandmila', name: 'Sándwich de milanesa', desc: 'Lechuga y tomate', price: 5500, e: '🥖', opts: ['Carne', 'Pollo'] },
-      { id: 'wrap', name: 'Wrap de pollo', desc: 'Pollo grillado, hojas verdes y tomate', price: 5800, e: '🌯', fit: true },
-      { id: 'ensalada', name: 'Ensalada completa', desc: 'Mix verde, huevo, zanahoria y choclo', price: 5500, e: '🥗', fit: true },
-      { id: 'empas', name: 'Empanadas x2', desc: 'Al horno', price: 3600, e: '🥟', opts: ['Carne', 'Jamón y queso', 'Una de cada'] }
+    { cat: 'Almuerzo', ic: 'plate', items: [
+      { id: 'menu', name: 'Menú del día', desc: 'Milanesa con puré y bebida', price: 6500, tag: 'Hoy' },
+      { id: 'sandmila', name: 'Sándwich de milanesa', desc: 'Lechuga y tomate', price: 5500, opts: ['Carne', 'Pollo'] },
+      { id: 'wrap', name: 'Wrap de pollo', desc: 'Pollo grillado, hojas verdes y tomate', price: 5800, fit: true },
+      { id: 'ensalada', name: 'Ensalada completa', desc: 'Mix verde, huevo, zanahoria y choclo', price: 5500, fit: true },
+      { id: 'empas', name: 'Empanadas x2', desc: 'Al horno', price: 3600, opts: ['Carne', 'Jamón y queso', 'Una de cada'] }
     ]},
-    { cat: 'Rápido', items: [
-      { id: 'tostado', name: 'Tostado J&Q', desc: 'Jamón y queso', price: 4500, e: '🥪', opts: ['Pan de miga', 'Pan árabe'] },
-      { id: 'medias', name: 'Medialunas x3', desc: 'De manteca, del día', price: 1800, e: '🥐' },
-      { id: 'yogur', name: 'Yogur con granola', desc: 'Con fruta de estación', price: 2600, e: '🥣', fit: true },
-      { id: 'fruta', name: 'Fruta', desc: 'Banana o manzana', price: 800, e: '🍎', fit: true }
+    { cat: 'Rápido', ic: 'bolt', items: [
+      { id: 'tostado', name: 'Tostado J&Q', desc: 'Jamón y queso', price: 4500, opts: ['Pan de miga', 'Pan árabe'] },
+      { id: 'medias', name: 'Medialunas x3', desc: 'De manteca, del día', price: 1800 },
+      { id: 'yogur', name: 'Yogur con granola', desc: 'Con fruta de estación', price: 2600, fit: true },
+      { id: 'fruta', name: 'Fruta', desc: 'Banana o manzana', price: 800, fit: true }
     ]},
-    { cat: 'Bebidas', items: [
-      { id: 'cafe', name: 'Café con leche', desc: 'Jarrito', price: 2200, e: '☕', opts: ['Leche entera', 'Descremada'] },
-      { id: 'agua', name: 'Agua 500 ml', desc: 'Con o sin gas', price: 1500, e: '💧', opts: ['Sin gas', 'Con gas'] },
-      { id: 'gaseosa', name: 'Gaseosa 500 ml', desc: 'Línea cola, lima limón o naranja', price: 2200, e: '🥤' },
-      { id: 'mate', name: 'Mate cocido', desc: 'Con leche o solo', price: 1400, e: '🧉' }
+    { cat: 'Bebidas', ic: 'cup', items: [
+      { id: 'cafe', name: 'Café con leche', desc: 'Jarrito', price: 2200, opts: ['Leche entera', 'Descremada'] },
+      { id: 'agua', name: 'Agua 500 ml', desc: 'Con o sin gas', price: 1500, opts: ['Sin gas', 'Con gas'] },
+      { id: 'gaseosa', name: 'Gaseosa 500 ml', desc: 'Línea cola, lima limón o naranja', price: 2200 },
+      { id: 'mate', name: 'Mate cocido', desc: 'Con leche o solo', price: 1400 }
     ]}
   ];
+  MENU.forEach(c => c.items.forEach(i => i.ic = c.ic));
   const ITEMS = Object.fromEntries(MENU.flatMap(c => c.items).map(i => [i.id, i]));
-  // Franjas de retiro con cupo (Entrega 2): cuando una se llena, se ofrece la siguiente.
+  // Franjas de retiro con cupo por cantina (Entrega 2): cuando una se llena, se ofrece la siguiente.
   const SLOTS = [
-    { id: 'asap', label: 'Lo antes posible', sub: c => '~' + c.wait + ' min', left: 3 },
-    { id: 's1030', label: 'Recreo 10:30–10:45', left: 6 },
-    { id: 's1215', label: 'Mediodía 12:15–12:30', left: 0 },
-    { id: 's1230', label: 'Mediodía 12:30–12:45', left: 4 },
-    { id: 's2015', label: 'Noche 20:15–20:30', left: 9 }
+    { id: 'asap', label: 'Lo antes posible', sub: c => '~' + c.wait + ' min', cap: 3 },
+    { id: 's1030', label: 'Recreo 10:30–10:45', cap: 6 },
+    { id: 's1215', label: 'Mediodía 12:15–12:30', cap: 0 },
+    { id: 's1230', label: 'Mediodía 12:30–12:45', cap: 4 },
+    { id: 's2015', label: 'Noche 20:15–20:30', cap: 9 }
   ];
   const PAYS = [
     { id: 'mp', label: 'Mercado Pago', sub: 'Dinero en cuenta o tarjetas guardadas' },
     { id: 'card', label: 'Tarjeta de débito', sub: 'Visa ···· 4821' }
   ];
 
-  const fmt = n => '$' + n.toLocaleString('es-AR');
+  const fmt = n => '$ ' + n.toLocaleString('es-AR');
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const IC = {
     back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>',
     home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20h-5v-6H9v6H4z"/></svg>',
     bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>',
     user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
-    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4-4"/></svg>'
+    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4-4"/></svg>',
+    plate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6a2 2 0 0 0 4 0V3M7 3v18M17 21V3c-2 1-3 3.5-3 6.5V14h3"/></svg>',
+    bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></svg>',
+    cup: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v4a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M12 3v3M4 21h12"/></svg>'
   };
 
   // ===== Estado =====
@@ -705,7 +752,8 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         { num: 'A-031', cantina: 'central', lines: [{ id: 'cafe', opt: 'Leche entera', qty: 1 }, { id: 'medias', opt: null, qty: 1 }], total: 4200, date: 'Ayer · 10:34' },
         { num: 'B-112', cantina: 'bar', lines: [{ id: 'menu', opt: null, qty: 1 }, { id: 'agua', opt: 'Sin gas', qty: 1 }], total: 8200, date: 'Lun · 12:21' }
       ],
-      notif: true, seq: 47
+      notif: true, seq: 47,
+      left: Object.fromEntries(CANTINAS.map(c => [c.id, Object.fromEntries(SLOTS.map(s => [s.id, s.cap]))]))
     };
   }
   const appEl = document.getElementById('app');
@@ -716,6 +764,11 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
   const lineName = l => ITEMS[l.id].name + (l.opt ? ' (' + l.opt + ')' : '');
   const summary = lines => lines.map(l => (l.qty > 1 ? l.qty + '× ' : '') + lineName(l)).join(', ');
   const qtyOf = id => S.lines.filter(l => l.id === id).reduce((a, l) => a + l.qty, 0);
+  const slotLeft = id => S.left[S.cantina][id] || 0;
+  // Si la franja elegida se llenó, pasa a la primera con cupo (o a ninguna).
+  function ensureSlot() {
+    if (!slotLeft(S.slot)) S.slot = (SLOTS.find(s => slotLeft(s.id)) || {}).id || null;
+  }
   function addLine(id, opt, qty) {
     const ex = S.lines.find(l => l.id === id && l.opt === opt);
     if (ex) ex.qty += qty; else S.lines.push({ id, opt, qty });
@@ -726,7 +779,8 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
   function tab(screen) { S.stack = []; S.screen = screen; render(true); }
   function toast(msg) {
     const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
-    appEl.appendChild(t); setTimeout(() => t.remove(), 1600);
+    // Fuera de appEl, así un render no lo borra antes de tiempo.
+    appEl.parentElement.appendChild(t); setTimeout(() => t.remove(), 1600);
   }
 
   // ===== Pantallas =====
@@ -738,11 +792,17 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     </nav>`;
   const top = (title, sub) => `<div class="topbar"><button class="iconbtn" data-act="back" aria-label="Volver">${IC.back}</button><div class="t"><h3>${title}</h3>${sub ? `<small>${sub}</small>` : ''}</div></div>`;
   const stageLabel = s => s >= 2 ? 'Listo para retirar' : s === 1 ? 'En preparación' : 'Recibido';
+  // Lista de cantinas filtrada por la búsqueda; el buscador la actualiza sola, sin re-renderizar la pantalla.
+  const cantList = () => CANTINAS.filter(c => c.name.toLowerCase().includes(S.q.toLowerCase())).map(c => `<button class="cant" data-cant="${c.id}" ${c.open ? '' : 'disabled'}>
+            <span class="av">${c.prefix}</span>
+            <span style="min-width:0"><span class="nm">${c.name}</span><br><span class="muted small">${c.where}</span></span>
+            <span class="wt">${c.open ? `<span class="pill ${c.wait > 10 ? 'warn' : 'ready'}">${c.wait > 10 ? 'Mucha demanda' : 'Abierta'}</span><span class="mins">~${c.wait} min</span>` : `<span class="pill closed">Cerrada</span><span class="muted small">${c.opens}</span>`}</span>
+          </button>`).join('') || '<p class="muted small">No encontramos cantinas con ese nombre.</p>';
 
   const screens = {
     onboard() {
       return `<div class="view"><div class="pad" style="padding-top:28px">
-        <span class="logo">${LOGO}Campus<b>Go</b></span>
+        <span class="logo">${LOGO_FULL}</span>
         <div><h2>¿Dónde cursás?</h2><p class="muted small" style="margin-top:6px">Elegí tu facultad y tu turno para ver las cantinas y los recreos.</p></div>
         <div style="display:grid;gap:8px">
           ${UNIS.map(x => `<button class="choice ${S.uni === x.id ? 'on' : ''}" data-uni="${x.id}" ${x.open ? '' : 'disabled'}><span class="dot"></span><span class="grow"><b>${x.name}</b><br><span class="muted small">${x.open ? 'Piloto activo' : 'Próximamente'}</span></span></button>`).join('')}
@@ -752,7 +812,6 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
       </div></div>`;
     },
     home() {
-      const list = CANTINAS.filter(c => c.name.toLowerCase().includes(S.q.toLowerCase()));
       const last = S.past[0];
       return `<div class="view"><div class="pad">
         <div style="display:flex;justify-content:space-between;align-items:end;gap:10px">
@@ -763,13 +822,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         ${S.active ? `<button class="break" data-act="track"><span class="small">Pedido en curso · ${S.active.num}</span><b>${stageLabel(S.active.stage)}</b><span class="small">Tocá para ver tu número de retiro</span></button>`
           : `<div class="break"><span class="small">Faltan 7 min para el recreo de las 12:15</span><b>Pedí ahora y retirá sin fila</b></div>`}
         <span class="lbl">Cantinas de la facultad</span>
-        <div style="display:grid;gap:10px">
-          ${list.map(c => `<button class="cant" data-cant="${c.id}" ${c.open ? '' : 'disabled'}>
-            <span class="av">${c.prefix}</span>
-            <span style="min-width:0"><span class="nm">${c.name}</span><br><span class="muted small">${c.where}</span></span>
-            <span class="wt">${c.open ? `<span class="pill ${c.wait > 10 ? 'new' : 'ready'}">${c.wait > 10 ? 'Mucha demanda' : 'Abierta'}</span><span class="mins">~${c.wait} min</span>` : `<span class="pill closed">Cerrada</span><span class="muted small">${c.opens}</span>`}</span>
-          </button>`).join('') || '<p class="muted small">No encontramos cantinas con ese nombre.</p>'}
-        </div>
+        <div id="cantList" style="display:grid;gap:10px">${cantList()}</div>
         ${last ? `<span class="lbl">Pedí de nuevo</span>
         <div class="card" style="display:flex;gap:12px;align-items:center;justify-content:space-between">
           <div style="min-width:0"><b>${cant(last.cantina).name}</b><br><span class="muted small">${summary(last.lines)}</span></div>
@@ -788,7 +841,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         <div style="padding:0 18px 12px">
           ${items.map(it => {
             const q = qtyOf(it.id);
-            return `<button class="item" data-item="${it.id}"><span class="th" aria-hidden="true">${it.e}</span>
+            return `<button class="item" data-item="${it.id}"><span class="th" aria-hidden="true">${IC[it.ic]}</span>
               <span style="min-width:0;display:block"><span class="nm">${it.name}${it.tag ? `<span class="tag">${it.tag}</span>` : ''}${it.fit ? '<span class="tag fit">Saludable</span>' : ''}</span><span class="ds" style="display:block">${it.desc}</span><span class="pr" style="display:block">${fmt(it.price)}</span></span>
               <span class="add ${q ? 'has' : ''}" aria-hidden="true">${q ? q : '+'}</span>
             </button>`;
@@ -800,7 +853,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     detail() {
       const d = S.detail, it = ITEMS[d.id];
       return `<div class="view">${top(it.name, cant(S.cantina).name)}
-        <div class="hero-dish" aria-hidden="true">${it.e}</div>
+        <div class="hero-dish" aria-hidden="true">${IC[it.ic]}</div>
         <div class="pad" style="padding-top:18px">
           <div><h2>${it.name}</h2><p class="muted" style="margin-top:4px">${it.desc}</p><p style="font-weight:800;font-size:20px;margin-top:8px">${fmt(it.price)}</p></div>
           ${it.opts ? `<div style="display:grid;gap:8px"><span class="lbl">Elegí una opción</span>${it.opts.map(o => `<button class="choice ${d.opt === o ? 'on' : ''}" data-opt="${esc(o)}"><span class="dot"></span><span class="grow"><b>${o}</b></span></button>`).join('')}</div>` : ''}
@@ -812,7 +865,9 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     cart() {
       const c = cant(S.cantina);
       if (!S.lines.length) return `<div class="view">${top('Tu pedido', c.name)}<div class="center"><p class="muted">Tu pedido está vacío.</p><button class="abtn alt" data-act="back">Volver al menú</button></div></div>`;
+      ensureSlot();
       const sub = subtotal(S.lines), pay = PAYS.find(p => p.id === S.pay);
+      const block = S.active ? `Retirá tu pedido ${S.active.num} antes de hacer otro.` : !S.slot ? 'Todas las franjas se llenaron. Probá más tarde.' : '';
       return `<div class="view">${top('Tu pedido', c.name)}<div class="pad">
         <div class="card" style="display:grid;gap:10px">
           ${S.lines.map((l, i) => `<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
@@ -822,7 +877,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
         </div>
         <label style="display:grid;gap:6px"><span class="lbl">Aclaraciones para la cantina</span><textarea class="note" id="app-note" rows="2" placeholder="Ej.: tostado bien caliente, sin sal">${esc(S.note)}</textarea></label>
         <div style="display:grid;gap:8px"><span class="lbl">Franja de retiro</span>
-          ${SLOTS.map(s => `<button class="choice ${S.slot === s.id ? 'on' : ''}" data-slot="${s.id}" ${s.left ? '' : 'disabled'}><span class="dot"></span><span class="grow"><b>${s.label}</b>${s.sub ? ` <span class="muted small">· ${s.sub(c)}</span>` : ''}</span><span class="cupo">${s.left ? 'Quedan ' + s.left : 'Completa'}</span></button>`).join('')}
+          ${SLOTS.map(s => `<button class="choice ${S.slot === s.id ? 'on' : ''}" data-slot="${s.id}" ${slotLeft(s.id) ? '' : 'disabled'}><span class="dot"></span><span class="grow"><b>${s.label}</b>${s.sub ? ` <span class="muted small">· ${s.sub(c)}</span>` : ''}</span><span class="cupo">${slotLeft(s.id) ? 'Quedan ' + slotLeft(s.id) : 'Completa'}</span></button>`).join('')}
           <p class="muted small">Cada franja tiene cupo para que no se arme fila en el retiro.</p>
         </div>
         <div style="display:grid;gap:8px"><span class="lbl">Pago</span>
@@ -834,7 +889,8 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
           <div class="line total"><span>Total</span><span>${fmt(sub + FEE)}</span></div>
           <p class="muted small">Con CampusGo Pass no pagás el cargo por servicio.</p>
         </div>
-        <button class="abtn" data-act="pay">Pagar ${fmt(sub + FEE)} con ${pay.label}</button>
+        ${block ? `<p class="small" style="color:var(--warning)">${block}</p>` : ''}
+        <button class="abtn" data-act="pay" ${block ? 'disabled' : ''}>Pagar ${fmt(sub + FEE)} con ${pay.label}</button>
         <p class="demo-note">Pago simulado: no se cobra nada.</p>
       </div></div>`;
     },
@@ -846,7 +902,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
       const o = S.active, c = cant(o.cantina);
       return `<div class="view"><div class="center" style="padding-top:56px">
         <div class="okmark" aria-hidden="true">✓</div>
-        <h2>¡Pedido confirmado!</h2>
+        <h2>Pedido confirmado</h2>
         <p class="muted">${c.name} ya recibió tu pedido. Te avisamos cuando esté listo.</p>
         <div class="ticket" style="width:100%;text-align:left"><span class="tk">Número de retiro</span><span class="tn">${o.num}</span><span class="small">Retiro: ${o.slot}</span></div>
         <button class="abtn" data-act="track">Ver estado del pedido</button>
@@ -893,7 +949,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
       return `<div class="view"><div class="pad">
         <h2>Perfil</h2>
         <div class="card" style="display:flex;gap:12px;align-items:center"><span style="width:48px;height:48px;flex:none;border-radius:50%;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:800;font-family:var(--f-display)">AG</span><div><b>Agus (usuario de ejemplo)</b><br><span class="muted small">${uni().name} · Turno ${S.turno.toLowerCase()}</span></div></div>
-        <div class="pass"><span class="lbl" style="color:inherit;opacity:.7">CampusGo Pass</span><b>$2.000 por mes</b><span class="small" style="opacity:.8">Sin cargo por servicio y con franja de retiro prioritaria. Si pedís 3 veces por semana, te sale menos que pagar $200 por pedido.</span><button class="chip" data-act="pass" style="justify-self:start;margin-top:4px">Avisame cuando esté</button></div>
+        <div class="pass"><span class="lbl" style="color:inherit;opacity:.7">CampusGo Pass</span><b>${fmt(2000)} por mes</b><span class="small" style="opacity:.8">Sin cargo por servicio y con franja de retiro prioritaria. Si pedís 3 veces por semana, te sale menos que pagar ${fmt(FEE)} por pedido.</span><button class="chip" data-act="pass" style="justify-self:start;margin-top:4px">Avisame cuando esté</button></div>
         <div class="card" style="display:grid;gap:12px">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><b>Avisarme cuando esté listo</b><br><span class="muted small">Notificación en el celular</span></div><button class="switch ${S.notif ? 'on' : ''}" data-act="notif" aria-label="Notificaciones" aria-pressed="${S.notif}"></button></div>
           <div style="display:flex;justify-content:space-between"><span>Medio de pago</span><span class="muted">Mercado Pago</span></div>
@@ -908,12 +964,18 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     const prev = appEl.querySelector('.view');
     const y = prev && !resetScroll ? prev.scrollTop : 0;
     const push = S.push && S.active ? `<button class="push" data-act="track">${LOGO}<span><b>CampusGo · ahora</b><span>Tu pedido ${S.active.num} está listo. Retiralo sin hacer fila.</span></span></button>` : '';
+    // Los timers del pedido re-renderizan en cualquier momento: conservá foco y cursor del campo activo.
+    const f = document.activeElement, fid = f && appEl.contains(f) ? f.id : '';
+    const sel = fid && 'selectionStart' in f ? [f.selectionStart, f.selectionEnd] : null;
     appEl.innerHTML = status + screens[S.screen]() + push;
     const v = appEl.querySelector('.view'); if (v) v.scrollTop = y;
+    const nf = fid && document.getElementById(fid);
+    if (nf) { nf.focus({ preventScroll: true }); if (sel) nf.setSelectionRange(sel[0], sel[1]); }
   }
 
   // ===== Pedido =====
   function placeOrder() {
+    if (S.active || !S.slot || !slotLeft(S.slot)) return render(false);
     const c = cant(S.cantina), s = SLOTS.find(x => x.id === S.slot);
     const total = subtotal(S.lines) + FEE;
     S.active = {
@@ -922,7 +984,7 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
       cantina: S.cantina, lines: S.lines.map(l => ({ ...l })), note: S.note, total, pay: S.pay,
       slot: s.id === 'asap' ? 'En ~' + c.wait + ' min' : s.label, stage: 0
     };
-    s.left = Math.max(0, s.left - 1);
+    S.left[S.cantina][s.id]--;
     S.lines = []; S.note = '';
     S.stack = ['home']; S.screen = 'paying'; render(true);
     clearTimers();
@@ -975,20 +1037,18 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
       case 'pass': return toast('Te avisamos cuando lancemos el Pass');
       case 'picked': {
         const o = S.active;
-        S.past.unshift({ num: o.num, cantina: o.cantina, lines: o.lines, total: o.total, date: 'Hoy · 12:1' + Math.min(9, S.past.length) });
-        S.active = null; S.push = false; S.stack = []; S.screen = 'orders'; render(true); return toast('¡Buen provecho!');
+        const at = new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false });
+        S.past.unshift({ num: o.num, cantina: o.cantina, lines: o.lines, total: o.total, date: 'Hoy · ' + at });
+        S.active = null; S.push = false; S.stack = []; S.screen = 'orders'; render(true); return toast('Buen provecho');
       }
     }
   });
   appEl.addEventListener('input', e => {
     if (e.target.id === 'app-note') S.note = e.target.value;
-    if (e.target.id === 'app-q') {
-      S.q = e.target.value; const pos = e.target.selectionStart; render(false);
-      const i = document.getElementById('app-q'); i.focus(); i.setSelectionRange(pos, pos);
-    }
+    if (e.target.id === 'app-q') { S.q = e.target.value; document.getElementById('cantList').innerHTML = cantList(); }
   });
 
-  function boot() { clearTimers(); SLOTS.forEach((s, i) => s.left = [3, 6, 0, 4, 9][i]); S = fresh(); render(true); }
+  function boot() { clearTimers(); S = fresh(); render(true); }
   document.getElementById('resetApp').addEventListener('click', boot);
   boot();
 })();
