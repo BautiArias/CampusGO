@@ -673,11 +673,15 @@ textarea.note { width: 100%; font: inherit; font-size: 14px; border: 1px solid v
     }
   });
 
-  // ===== Pantalla completa =====
+     // ===== Pantalla completa =====
   const wrapEl = document.getElementById('deviceWrap');
   document.querySelectorAll('[data-full]').forEach(b => b.addEventListener('click', () => { wrapEl.classList.add('full'); document.body.style.overflow = 'hidden'; }));
   document.getElementById('closeFull').addEventListener('click', () => { wrapEl.classList.remove('full'); document.body.style.overflow = ''; });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('closeFull').click(); });
+  if (location.hash === '#app') {
+    wrapEl.classList.add('full');
+    document.body.style.overflow = 'hidden';
+  }
 
   // ===== Datos de ejemplo =====
   const FEE = 200;
